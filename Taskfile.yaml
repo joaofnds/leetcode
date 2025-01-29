@@ -1,0 +1,67 @@
+version: "3"
+
+tasks:
+  test:
+    method: none
+    sources: ["*/go.mod"]
+    cmds:
+      - for: sources
+        task: test-dir
+        vars: {DIR: "{{dir .ITEM}}"}
+
+  test-dir:
+    label: "test {{.DIR}}"
+    dir: "{{.DIR}}"
+    cmds:
+      - go test
+    sources:
+      - "*.go"
+
+  lint:
+    method: none
+    sources: ["*/go.mod"]
+    cmds:
+      - for: sources
+        task: lint-dir
+        vars: {DIR: "{{dir .ITEM}}"}
+
+  lint-dir:
+    label: "lint {{.DIR}}"
+    dir: "{{.DIR}}"
+    cmd: golangci-lint run
+    sources:
+      - "*.go"
+
+  format:
+    deps:
+      - format:go
+      - format:mise
+      - format:yaml
+
+  format:go:
+    cmds:
+      - gofmt -w .
+    sources:
+      - ./**/*.go
+
+  format:mise:
+    desc: format mise config
+    cmds:
+      - mise fmt
+    sources:
+      - .mise.toml
+
+  format:yaml:
+    desc: format yaml
+    cmds:
+      - yamlfmt -formatter indent=2,retain_line_breaks=true ./**/*.yaml ./.github/**/*.yaml
+    sources:
+      - ./**/*.yaml
+      - ./.github/**/*.yaml
+
+
+  ci:
+    cmds:
+      - task: lint
+      - task: format
+      - task: test

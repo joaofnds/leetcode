@@ -1,0 +1,5 @@
+[tools]
+go = "1.23.5"
+golangci-lint = "1.63.4"
+task = "3.40.1"
+"go:github.com/google/yamlfmt/cmd/yamlfmt" = "latest"
