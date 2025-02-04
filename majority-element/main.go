@@ -1,14 +1,20 @@
 package main
 
 func majorityElement(nums []int) int {
-	counts := map[int]int{}
+	var maj, count int
 
 	for _, n := range nums {
-		counts[n]++
-		if counts[n] > (len(nums) / 2) {
-			return n
+		if count == 0 {
+			maj = n
+			count = 1
+		} else {
+			if maj == n {
+				count++
+			} else {
+				count--
+			}
 		}
 	}
 
-	panic("No majority element found")
+	return maj
 }
