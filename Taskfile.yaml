@@ -28,7 +28,7 @@ tasks:
   lint-dir:
     label: "lint {{.DIR}}"
     dir: "{{.DIR}}"
-    cmd: golangci-lint run
+    cmd: golangci-lint run --enable=gofumpt
     sources:
       - "*.go"
 
@@ -39,10 +39,20 @@ tasks:
       - format:yaml
 
   format:go:
+    method: none
+    sources: ["*/go.mod"]
     cmds:
-      - gofmt -w .
+      - for: sources
+        task: format:go-dir
+        vars: {DIR: "{{dir .ITEM}}"}
+
+  format:go-dir:
+    label: "test {{.DIR}}"
+    dir: "{{.DIR}}"
+    cmds:
+      - golangci-lint run --disable-all --enable=gofumpt --fix
     sources:
-      - ./**/*.go
+      - "*.go"
 
   format:mise:
     desc: format mise config
@@ -59,9 +69,8 @@ tasks:
       - ./**/*.yaml
       - ./.github/**/*.yaml
 
-
   ci:
     cmds:
-      - task: lint
       - task: format
+      - task: lint
       - task: test
