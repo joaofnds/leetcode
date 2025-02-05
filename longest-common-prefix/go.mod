@@ -1,3 +1,3 @@
 module longest_common_prefix
 
-go 1.23.5
+go 1.23.6
