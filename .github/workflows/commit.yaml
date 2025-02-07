@@ -12,7 +12,7 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: .task
-          key: ${{ runner.os }}-go-task
+          key: go-task-${{ hashFiles('*/go.mod') }}
       - uses: jdx/mise-action@v2
         with:
           experimental: true
