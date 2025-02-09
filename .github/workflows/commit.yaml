@@ -13,7 +13,7 @@ jobs:
         with:
           path: .task
           key: go-task-${{ hashFiles('*/go.mod') }}
-          restore-keys: go-test-
+          restore-keys: go-task-
       - uses: jdx/mise-action@v2
         with:
           experimental: true
