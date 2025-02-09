@@ -47,7 +47,7 @@ tasks:
         vars: {DIR: "{{dir .ITEM}}"}
 
   format:go-dir:
-    label: "test {{.DIR}}"
+    label: "format {{.DIR}}"
     dir: "{{.DIR}}"
     cmds:
       - golangci-lint run --disable-all --enable=gofumpt --fix
