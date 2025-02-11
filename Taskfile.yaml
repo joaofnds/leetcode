@@ -59,7 +59,7 @@ tasks:
     cmds:
       - mise fmt
     sources:
-      - .mise.toml
+      - mise.toml
 
   format:yaml:
     desc: format yaml

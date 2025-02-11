@@ -1,3 +1,3 @@
 module find_the_index_of_the_first_occurrence_in_a_string
 
-go 1.23.6
+go 1.24.0
