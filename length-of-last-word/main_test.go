@@ -19,7 +19,7 @@ func TestLengthOfLastWord(t *testing.T) {
 		t.Run(fmt.Sprintf("lengthOfLastWord(%q)", test.input), func(t *testing.T) {
 			actual := lengthOfLastWord(test.input)
 			if actual != test.expected {
-				t.Errorf("lengthOfLastWord(%q) got %d, expected %d", test.input, actual, test.expected)
+				t.Errorf("expected %d, got %d", test.expected, actual)
 			}
 		})
 	}

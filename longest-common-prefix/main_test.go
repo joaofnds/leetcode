@@ -18,7 +18,7 @@ func TestLongestCommonPrefix(t *testing.T) {
 		t.Run(fmt.Sprintf("longestCommonPrefix(%v)", test.inputs), func(t *testing.T) {
 			actual := longestCommonPrefix(test.inputs)
 			if actual != test.expected {
-				t.Errorf("longestCommonPrefix(%v) got %q, expected %q", test.inputs, actual, test.expected)
+				t.Errorf("expected %q, got %q", test.expected, actual)
 			}
 		})
 	}

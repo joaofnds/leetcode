@@ -23,7 +23,7 @@ func TestWordPattern(t *testing.T) {
 		t.Run(fmt.Sprintf("wordPattern(%q,%q)", test.pattern, test.s), func(t *testing.T) {
 			actual := wordPattern(test.pattern, test.s)
 			if actual != test.expected {
-				t.Errorf("expected %t, got %t", actual, test.expected)
+				t.Errorf("expected %t, got %t", test.expected, actual)
 			}
 		})
 	}

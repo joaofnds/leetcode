@@ -23,7 +23,7 @@ func TestMerge(t *testing.T) {
 		t.Run(fmt.Sprintf("merge(%v, %d, %v, %d)", test.nums1, test.m, test.nums2, test.n), func(t *testing.T) {
 			merge(test.nums1, test.m, test.nums2, test.n)
 			if !reflect.DeepEqual(test.nums1, test.expected) {
-				t.Errorf("merge(%v, %d, %v, %d) got %v, expected %v", test.nums1, test.m, test.nums2, test.n, test.nums1, test.expected)
+				t.Errorf("expected %v, got %v", test.expected, test.nums1)
 			}
 		})
 	}

@@ -20,7 +20,7 @@ func TestRemoveElement(t *testing.T) {
 		t.Run(fmt.Sprintf("removeElement(%v, %d)", test.nums, test.val), func(t *testing.T) {
 			k := removeElement(test.nums, test.val)
 			if !reflect.DeepEqual(test.nums[:k], test.expected) {
-				t.Errorf("removeElement(%v, %d) got %v, expected %v", test.nums, test.val, test.nums, test.expected)
+				t.Errorf("expected %v, got %v", test.expected, test.nums[:k])
 			}
 		})
 	}

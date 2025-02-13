@@ -19,7 +19,7 @@ func TestRomanToInt(t *testing.T) {
 		t.Run(fmt.Sprintf("romanToInt(%q)", test.input), func(t *testing.T) {
 			actual := romanToInt(test.input)
 			if actual != test.expected {
-				t.Errorf("romanToInt(%q) got %d, expected %d", test.input, actual, test.expected)
+				t.Errorf("expected %d, got %d", test.expected, actual)
 			}
 		})
 	}

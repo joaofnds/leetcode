@@ -18,7 +18,7 @@ func TestMajorityElement(t *testing.T) {
 		t.Run(fmt.Sprintf("majorityElement(%v)", test.nums), func(t *testing.T) {
 			actual := majorityElement(test.nums)
 			if actual != test.expected {
-				t.Errorf("majorityElement(%v) got %d, expected %d", test.nums, actual, test.expected)
+				t.Errorf("expected %d, got %d", test.expected, actual)
 			}
 		})
 	}

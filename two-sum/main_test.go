@@ -21,7 +21,7 @@ func TestTwoSum(t *testing.T) {
 		t.Run(fmt.Sprintf("twoSum(%v,%d)", test.nums, test.target), func(t *testing.T) {
 			actual := twoSum(test.nums, test.target)
 			if !reflect.DeepEqual(actual, test.expected) {
-				t.Errorf("expected %v, got %v", actual, test.expected)
+				t.Errorf("expected %v, got %v", test.expected, actual)
 			}
 		})
 	}

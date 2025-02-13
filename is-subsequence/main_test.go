@@ -19,7 +19,7 @@ func TestIsSubsequence(t *testing.T) {
 		t.Run(fmt.Sprintf("isSubsequence(%q, %q)", test.s, test.t), func(t *testing.T) {
 			actual := isSubsequence(test.s, test.t)
 			if actual != test.expected {
-				t.Errorf("isSubsequence(%q, %q) got %t, expected %t", test.s, test.t, actual, test.expected)
+				t.Errorf("expected %t, got %t", test.expected, actual)
 			}
 		})
 	}

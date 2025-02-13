@@ -18,7 +18,7 @@ func TestMaxProfit(t *testing.T) {
 		t.Run(fmt.Sprintf("maxProfit(%v)", test.nums), func(t *testing.T) {
 			actual := maxProfit(test.nums)
 			if actual != test.expected {
-				t.Errorf("maxProfit(%v) got %d, expected %d", test.nums, actual, test.expected)
+				t.Errorf("expected %d, got %d", test.expected, actual)
 			}
 		})
 	}

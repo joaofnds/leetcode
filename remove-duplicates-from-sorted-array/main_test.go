@@ -19,7 +19,7 @@ func TestRemoveDuplicates(t *testing.T) {
 		t.Run(fmt.Sprintf("removeDuplicates(%v)", test.nums), func(t *testing.T) {
 			k := removeDuplicates(test.nums)
 			if !reflect.DeepEqual(test.nums[:k], test.expected) {
-				t.Errorf("removeDuplicates(%v) got %v, expected %v", test.nums, test.nums, test.expected)
+				t.Errorf("expected %v, got %v", test.expected, test.nums[:k])
 			}
 		})
 	}

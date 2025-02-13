@@ -22,7 +22,7 @@ func TestIsPalindrome(t *testing.T) {
 		t.Run(fmt.Sprintf("isPalindrome(%q)", test.input), func(t *testing.T) {
 			actual := isPalindrome(test.input)
 			if actual != test.expected {
-				t.Errorf("isPalindrome(%q) got %t, expected %t", test.input, actual, test.expected)
+				t.Errorf("expected %t, got %t", test.expected, actual)
 			}
 		})
 	}
