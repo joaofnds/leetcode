@@ -23,6 +23,15 @@ func TestSortedArrayToBST(t *testing.T) {
 			}
 		})
 	}
+
+	for _, test := range tests {
+		t.Run(fmt.Sprintf("sortedArrayToBSTIter(%v)", test.input), func(t *testing.T) {
+			actual := toSlice(sortedArrayToBSTIter(test.input))
+			if !reflect.DeepEqual(actual, test.expected) {
+				t.Errorf("expected %v, got %v", test.expected, actual)
+			}
+		})
+	}
 }
 
 func toSlice(root *TreeNode) []int {
