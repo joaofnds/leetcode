@@ -7,8 +7,7 @@ import (
 )
 
 func TestMySqrt(t *testing.T) {
-
-	for x := 0; x < 100; x++ {
+	for x := range 100 {
 		expected := int(math.Sqrt(float64(x)))
 
 		t.Run(fmt.Sprintf("mySqrt(%d)", x), func(t *testing.T) {
