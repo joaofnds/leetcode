@@ -6,10 +6,6 @@ import (
 	"testing"
 )
 
-// gas  = [1,2,3,4,5]
-// cost = [3,4,5,1,2]
-// diff = [-2,-2,-2,3,3]
-
 func TestCanCompleteCircuit(t *testing.T) {
 	tests := []struct {
 		gas      []int
