@@ -1,25 +1,21 @@
 package main
 
-import "strings"
-
 func isPalindrome(s string) bool {
-	i := 0
-	j := len(s) - 1
-
-	lower := strings.ToLower(s)
-
+	i, j := 0, len(s)-1
 	for i < j {
-		if !isAlphanumeric(lower[i]) {
+		left, right := toLower(s[i]), toLower(s[j])
+
+		if !isAlphanumeric(left) {
 			i++
 			continue
 		}
 
-		if !isAlphanumeric(lower[j]) {
+		if !isAlphanumeric(right) {
 			j--
 			continue
 		}
 
-		if lower[i] != lower[j] {
+		if left != right {
 			return false
 		}
 
@@ -32,4 +28,12 @@ func isPalindrome(s string) bool {
 
 func isAlphanumeric(c byte) bool {
 	return ('a' <= c && c <= 'z') || ('0' <= c && c <= '9')
+}
+
+func toLower(c byte) byte {
+	if 'A' <= c && c <= 'Z' {
+		return c + ('a' - 'A')
+	}
+
+	return c
 }
