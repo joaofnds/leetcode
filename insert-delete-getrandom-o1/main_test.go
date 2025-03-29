@@ -44,11 +44,12 @@ func TestRandomizedSet(t *testing.T) {
 		found1, found3 := false, false
 		for range 100 {
 			val := set.GetRandom()
-			if val == 1 {
+			switch val {
+			case 1:
 				found1 = true
-			} else if val == 3 {
+			case 3:
 				found3 = true
-			} else {
+			default:
 				t.Errorf("GetRandom() returned unexpected value: %d", val)
 			}
 
