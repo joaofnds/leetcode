@@ -12,8 +12,7 @@ tasks:
   test-dir:
     label: "test {{.DIR}}"
     dir: "{{.DIR}}"
-    cmds:
-      - go test
+    cmd: go test
     sources:
       - "*.go"
 
@@ -28,7 +27,7 @@ tasks:
   lint-dir:
     label: "lint {{.DIR}}"
     dir: "{{.DIR}}"
-    cmd: golangci-lint run --enable=gofumpt
+    cmd: golangci-lint run
     sources:
       - "*.go"
 
@@ -49,22 +48,19 @@ tasks:
   format:go-dir:
     label: "format {{.DIR}}"
     dir: "{{.DIR}}"
-    cmds:
-      - golangci-lint run --disable-all --enable=gofumpt --fix
+    cmd: golangci-lint fmt --enable=gofumpt
     sources:
       - "*.go"
 
   format:mise:
     desc: format mise config
-    cmds:
-      - mise fmt
+    cmd: mise fmt
     sources:
       - mise.toml
 
   format:yaml:
     desc: format yaml
-    cmds:
-      - yamlfmt -formatter indent=2,retain_line_breaks=true ./**/*.yaml ./.github/**/*.yaml
+    cmd: yamlfmt -formatter indent=2,retain_line_breaks=true ./**/*.yaml ./.github/**/*.yaml
     sources:
       - ./**/*.yaml
       - ./.github/**/*.yaml
