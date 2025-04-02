@@ -1,3 +1,3 @@
 module remove_duplicates_from_sorted_array_ii
 
-go 1.24.0
+go 1.24

@@ -1,3 +1,3 @@
 module count_complete_tree_nodes
 
-go 1.24.0
+go 1.24

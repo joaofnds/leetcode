@@ -1,3 +1,3 @@
 module container_with_most_water
 
-go 1.24.0
+go 1.24

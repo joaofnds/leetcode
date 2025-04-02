@@ -1,3 +1,3 @@
 module length_of_last_word
 
-go 1.24.0
+go 1.24
