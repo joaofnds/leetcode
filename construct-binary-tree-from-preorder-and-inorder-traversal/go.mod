@@ -1,0 +1,3 @@
+module construct_binary_tree_from_preorder_and_inorder_traversal
+
+go 1.24
