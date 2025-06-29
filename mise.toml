@@ -1,5 +1,5 @@
 [tools]
-go = "1.24.2"
-golangci-lint = "2.1.5"
-task = "3.42.1"
-yamlfmt = "0.16.0"
+go = "1.24.4"
+golangci-lint = "2.2.0"
+task = "3.44.0"
+yamlfmt = "0.17.2"
